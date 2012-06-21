@@ -64,7 +64,7 @@ $autoload['libraries'] = array('parser','smarty');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('debug_helper');
+$autoload['helper'] = array('');
 
 
 /*

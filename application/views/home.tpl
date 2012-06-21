@@ -25,7 +25,7 @@
 		   <p><b>siteroot/application/third_party/Smarty</b>.</p>
 		   <p>Change it's setup via:</p>
 		   <p><b>siteroot/application/config/smarty.php</b>.</p>
-		   <p>CI autoloads libraries <b>"parse"</b> and <b>"smarty"</b>  in:</p>
+		   <p>CI autoloads libraries <b>"parser"</b> and <b>"smarty"</b>  in:</p>
 		   <p><b>siteroot/application/libraries/MY_parser.php</b><br />
 		   <b>siteroot/spplication/libraries/smarty.php</b>.</p>
           <p><a class="btn" href="#">View details &raquo;</a></p>

@@ -368,7 +368,43 @@ FileETag None
 #   RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 # </IfModule>
 
+# ----------------------------------------------------------------------
+# Remove index.php from CI URL's
+# ----------------------------------------------------------------------
 
+#<IfModule mod_rewrite.c>
+#    RewriteEngine On
+  
+  	# my url is http://localhost/example
+    #RewriteBase /example/
+	# set your own
+	
+#	RewriteBase /
+	
+    #Removes access to the system folder by users.
+    #Additionally this will allow you to create a System.php controller,
+    #previously this would not have been possible.
+    #'system' can be replaced if you have renamed your system folder.
+	
+#    RewriteCond %{REQUEST_URI} ^system.*
+#    RewriteRule ^(.*)$ /index.php?/$1 [L]
+    
+    #When your application folder isn't in the system folder
+    #This snippet prevents user access to the application folder
+    #Submitted by: Fabdrol
+    #Rename 'application' to your applications folder name.
+	
+#    RewriteCond %{REQUEST_URI} ^application.*
+#    RewriteRule ^(.*)$ /index.php?/$1 [L]
+
+    #Checks to see if the user is attempting to access a valid file,
+    #such as an image or css document, if this isn't true it sends the
+    #request to index.php
+	
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule ^(.*)$ index.php?/$1 [L]
+#</IfModule>
 
 # ----------------------------------------------------------------------
 # Built-in filename-based cache busting
@@ -412,7 +448,7 @@ FileETag None
 # without -MultiViews, Apache will give a 404 for a rewrite if a folder of the same name does not exist
 #   e.g. /blog/hello : webmasterworld.com/apache/3808792.htm
 
-Options -MultiViews
+# Options -MultiViews
 
 
 
@@ -421,7 +457,7 @@ Options -MultiViews
 # ----------------------------------------------------------------------
 
 # You can add custom pages to handle 500 or 403 pretty easily, if you like.
-ErrorDocument 404 /404.html
+# ErrorDocument 404 /404.html
 
 
 
